@@ -1,0 +1,11 @@
+<div class="title">
+  Top 10 Video Chart
+</div>
+<div
+  class="video-to-show"
+  *ngFor="let videoToEmbed of videosToShow; let idx = index">
+  <app-video-embed 
+    [videoCfg]="videoToEmbed"
+    [index]="idx + 1">
+  </app-video-embed>
+</div>

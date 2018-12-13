@@ -1,0 +1,32 @@
+<div class="details">
+  <div class="title">
+    {{index + " - " + (videoCfg.title || "")}}
+  </div>
+
+  <div class="views">
+    {{videoCfg.views | thousandSuffixes: 2}}
+  </div>
+</div>
+<div
+  *ngIf="videoCfg.source == 'facebook'"
+  class="fb-video" 
+  [attr.href]="facebookLink" 
+  [attr.width]="sizes.width" 
+  [attr.height]="sizes.height" 
+  data-show-text="false">
+</div>
+<div 
+  *ngIf="videoCfg.source == 'youtube'" 
+  [innerHTML]="embedHTML">
+</div>
+<div
+  *ngIf="videoCfg.source == 'url'"
+  class="video-item">
+  <video
+    class="url-video"
+    [width]="'auto'"
+    [height]="sizes.height"
+    controls>
+    <source [src]="videoCfg.url" type="video/mp4">
+  </video>
+</div>
