@@ -28,7 +28,6 @@ export class VideoEmbedComponent implements OnInit {
           height: 280
         }
       } else {
-        appDetailsService.getInnerWidth
         this.sizes = {
           width: 500,
           height: 280

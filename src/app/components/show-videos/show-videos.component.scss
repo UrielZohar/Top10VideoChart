@@ -18,8 +18,12 @@
     
     .video-to-show {
         margin: 0 auto;
-        width: 520px;
+        width: 500px;
         height: 340px;
+
+        &.facebook {
+            margin-bottom: 250px;
+        }
     }
 }
 

@@ -1,12 +1,13 @@
 <div class="details">
   <div class="title">
-    {{index + " - " + (videoCfg.title || "")}}
+    {{(videoCfg.title || "")}}
   </div>
 
   <div class="views">
     {{videoCfg.views | thousandSuffixes: 2}}
   </div>
 </div>
+<!-- facebook -->
   <div
   *ngIf="videoCfg.source == 'facebook'"
   class="fb-video" 
@@ -14,11 +15,13 @@
   [attr.width]="sizes.width" 
   data-show-text="false">
 </div>
+<!-- youtube -->
 <div
   class="youtube-wrapper"
   *ngIf="videoCfg.source == 'youtube'" 
   [innerHTML]="embedHTML">
 </div>
+<!-- external url -->
 <div
   *ngIf="videoCfg.source == 'url'"
   class="video-item">
