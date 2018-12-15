@@ -3,3 +3,8 @@ body {
     display: block;
     height: 100%;
 }
+
+body.mobile-mode {
+    margin: 0;
+}
+

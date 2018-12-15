@@ -14,19 +14,23 @@ export class VideoEmbedComponent implements OnInit {
   private embedHTML;
   private facebookLink;
   private sizes;
+  private innerWidth;
 
   constructor(
     private embedService: EmbedVideoService,
     private appDetailsService: AppDetailsService) {
-
-      if (appDetailsService.getIsMobile) {
+      
+      if (appDetailsService.getIsMobile()) {
+        this.innerWidth = appDetailsService.getInnerWidth();
+        console.log(this.innerWidth);
         this.sizes = {
-          width: "100%",
+          width: this.innerWidth,
           height: 280
         }
       } else {
+        appDetailsService.getInnerWidth
         this.sizes = {
-          width: 540,
+          width: 500,
           height: 280
         }
       }
