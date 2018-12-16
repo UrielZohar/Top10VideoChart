@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     background-color:#F7F7F7;
-    
 
     .title {
         background-color: #FDC346;
@@ -15,14 +14,17 @@
         line-height: 40px;
         margin-bottom: 30px;
     }
-    
-    .video-to-show {
-        margin: 0 auto;
-        width: 500px;
-        height: 340px;
 
-        &.facebook {
-            margin-bottom: 250px;
+    .select-video-type {
+        margin: 0 auto 50px auto;
+        width: 200px;
+        text-align: center;
+    }
+
+    .all-videos {
+        .video-to-show {
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

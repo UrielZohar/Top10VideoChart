@@ -1,10 +1,21 @@
 <div class="title">
   Top Videos Chart
 </div>
-<app-video-embed
+<div class="select-video-type">
+  <select (change)="onVideoTypeChange($event.target.value)">
+      <option value="all">All</option>
+      <option value="youtube">Youtube</option>
+      <option value="facebook">Fabebook</option>
+      <option value="url">External Url</option>
+  </select>
+</div>
+<div class="all-videos">
+  <app-video-embed
   *ngFor="let videoToEmbed of videosToShow; let idx = index"
   [videoCfg]="videoToEmbed"
   [index]="idx + 1"
   class="video-to-show"
-  [ngClass]="videoToEmbed.source">
+  [ngClass]="videoToEmbed.source"
+  [style.display]="((selectedVideoType != 'all') && (selectedVideoType != videoToEmbed.source)) ? 'none' : 'block'">
 </app-video-embed>
+</div>

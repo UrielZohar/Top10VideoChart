@@ -9,6 +9,7 @@ import { IVideo } from 'src/app/interfaces/video';
 })
 export class ShowVideosComponent implements OnInit {
   public videosToShow: IVideo[];
+  private selectedVideoType = "all";
 
   constructor(private videosService: VideosServiceService) { 
 
@@ -19,5 +20,10 @@ export class ShowVideosComponent implements OnInit {
       this.videosToShow = videos;
     });
   }
+
+  onVideoTypeChange(newSelectedVideoType: string) {
+    this.selectedVideoType = newSelectedVideoType.toLowerCase();
+    console.log(this.selectedVideoType);
+  } 
 
 }
