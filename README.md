@@ -12,5 +12,11 @@ Then Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The 
 
 Go to "server" folder and then run `npm i`, and then run `npm start`.
 
+## Other Notes
+
+Please run it on Chrome.
+
+After changing the browser sizes please refresh the page to see the responsive design. 
+
 
 
