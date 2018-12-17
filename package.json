@@ -1,0 +1,23 @@
+{
+  "name": "natuelIntelligence",
+  "version": "1.0.0",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node server.js",
+    "build": "ng build",
+	"postinstall": "ng build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrielZohar/Top10VideoChart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrielZohar/Top10VideoChart/issues"
+  },
+  "homepage": "https://github.com/UrielZohar/Top10VideoChart#readme"
+}
