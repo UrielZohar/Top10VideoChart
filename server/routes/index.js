@@ -5,6 +5,8 @@ console.log('Definning the routes...');
 
 app.use(express.static(__dirname + '/../../dist/natuelIntelligence/index.html'));
 
+console.log('The __dirname is: ' + __dirname);
+
 /*
 router.get('/', function(req, res, next) {
   console.log('Get default path get request');
