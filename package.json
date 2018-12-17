@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build",
-    "start": "node ./bin/www",
-	  "postinstall": "ng build --prod",
+    "start": "node ./server/bin/www",
+	  "postinstall": "ng build --prod && cd server && npm install",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
