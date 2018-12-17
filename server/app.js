@@ -29,6 +29,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+console.log('The __dirname is: ' + __dirname);
+console.log('Definning the default API');
+
+
+app.get('/', function(req, res, next) {
+  console.log('Get default path get request');
+  console.log('The __dirname is: ' + __dirname);
+  res.status(200).sendFile(path.join(__dirname + '/../../dist/natuelIntelligence/index.html'));
+});
+
 app.use('/api', index);
 app.use('/videos', videos);
 
