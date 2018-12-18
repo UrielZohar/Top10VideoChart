@@ -24,6 +24,7 @@ export class ShowVideosComponent implements OnInit {
     
     // callback the the FB to be loaded -
     if (myWindow.FB) {
+      console.log("I alredy had FB");
       this.videosService.getAllVideo().subscribe((videos: IVideo[]) => {
         this.videosToShow = videos;
       });
