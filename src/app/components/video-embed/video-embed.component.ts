@@ -1,6 +1,6 @@
 import { AppDetailsService } from './../../services/app-details.service';
 import { EmbedVideoService } from 'ngx-embed-video';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/video';
 
 @Component({
@@ -8,7 +8,7 @@ import { IVideo } from 'src/app/interfaces/video';
   templateUrl: './video-embed.component.html',
   styleUrls: ['./video-embed.component.scss']
 })
-export class VideoEmbedComponent implements OnInit {
+export class VideoEmbedComponent implements OnInit, AfterViewInit {
   @Input('videoCfg') videoCfg: IVideo;
   @Input('index') index: IVideo;
   private embedHTML;
@@ -52,6 +52,13 @@ export class VideoEmbedComponent implements OnInit {
         this.facebookLink = `https://www.facebook.com/peopleareawesome/videos/${this.videoCfg.videoId}`;
         break;
       }
+    }
+  }
+
+  ngAfterViewInit() {
+    let myWindow = window as any;
+    if (this.videoCfg.source == "facebook") {
+      myWindow.FB.XFBML.parse();
     }
   }
 
