@@ -49,7 +49,7 @@ export class VideoEmbedComponent implements OnInit {
       }
 
       case("facebook"): {
-        this.facebookLink = `https://www.facebook.com/facebook/videos/${this.videoCfg.videoId}`;
+        this.facebookLink = `https://www.facebook.com/peopleareawesome/videos/${this.videoCfg.videoId}`;
         break;
       }
     }
