@@ -12,7 +12,7 @@ export class VideosServiceService {
   constructor(private http: HttpClient) { }
 
   getAllVideo() {
-    return this.http.get(`http://localhost:8000/videos`)
+    return this.http.get(`https://top10-video-chart.herokuapp.com/videos`)
     .pipe(
       map( (videos: IVideo[]) => {
         // check validity of all the videos and remove the bads 
@@ -26,7 +26,7 @@ export class VideosServiceService {
         })
       }),
       catchError ((error) => {
-        console.error(`Bad Promise: ${error}`);
+        console.error(`Bad Promise in getting the videos: ${error}`);
         return of(null);
       } 
     ));
