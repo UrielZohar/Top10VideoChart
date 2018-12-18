@@ -23,7 +23,6 @@ export class ShowVideosComponent implements OnInit {
 
   onVideoTypeChange(newSelectedVideoType: string) {
     this.selectedVideoType = newSelectedVideoType.toLowerCase();
-    console.log(this.selectedVideoType);
   } 
 
 }
