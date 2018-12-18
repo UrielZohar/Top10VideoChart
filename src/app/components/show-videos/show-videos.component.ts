@@ -23,16 +23,22 @@ export class ShowVideosComponent implements OnInit {
     //myWindow.FB.Event.subscribe('xfbml.render', finished_rendering);
     
     // callback the the FB to be loaded -
-    myWindow.fbAsyncInit = () => {
-      if (myWindow.FB) {
-        console.log("I have FB");
-        this.videosService.getAllVideo().subscribe((videos: IVideo[]) => {
-          this._ngZone.run(() => {
-            this.videosToShow = videos;
+    if (myWindow.FB) {
+      this.videosService.getAllVideo().subscribe((videos: IVideo[]) => {
+        this.videosToShow = videos;
+      });
+    } else {
+      myWindow.fbAsyncInit = () => {
+        if (myWindow.FB) {
+          console.log("I have FB");
+          this.videosService.getAllVideo().subscribe((videos: IVideo[]) => {
+            this._ngZone.run(() => {
+              this.videosToShow = videos;
+            });
           });
-        });
-      } 
-    };
+        } 
+      };
+    }
   }
 
   onVideoTypeChange(newSelectedVideoType: string) {
